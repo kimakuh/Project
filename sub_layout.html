@@ -244,11 +244,617 @@
         .header_wrap.distinct .gnb_list .depth2 li:nth-child(odd) {
             padding-right: 1%
         }
-
     </style>
 </head>
 
 <body>
+    <script>
+    //브라우저 버전 체크
+    var IEVersionCheck = function() {
+
+        var word,
+            version = "N/A",
+            agent = navigator.userAgent.toLowerCase(),
+            name = navigator.appName;
+
+        // IE old version ( IE 10 or Lower )
+        if ( name == "Microsoft Internet Explorer" ) word = "msie ";
+
+        else {
+            // IE 11
+            if ( agent.search("trident") > -1 ) word = "trident/.*rv:";
+
+            // IE 12  ( Microsoft Edge )
+            else if ( agent.search("edge/") > -1 ) word = "edge/";
+        }
+
+        var reg = new RegExp( word + "([0-9]{1,})(\\.{0,}[0-9]{0,1})" );
+        if (  reg.exec( agent ) != null  )
+            version = RegExp.$1 + RegExp.$2;
+
+        return version;
+    };
+
+
+    //언어선택
+    function LanguageMenu() {
+    	$('#language > a').click(function(event) {
+    		var speed = 400;
+    		if ($(this).next('.language_menu').css('display')=='none') {
+    			$('.language_menu').slideUp(speed);
+    			$(this).next('.language_menu').slideDown(speed);
+    		}
+    		else {
+    			$('.language_menu').slideUp(speed);
+    		}
+    	});
+    }
+
+
+    //메일 보내기
+    function SnadMail() {
+    	$('#snad_mail_btn').click(function(event) {
+    		var speed = 0;
+    		if ($(this).next('.snad_mail_form').css('display')=='none') {
+    			$('.snad_mail_form').slideDown(speed);
+    		}
+    		else {
+    			$('.snad_mail_form').slideUp(speed);
+    		}
+    	});
+    }
+
+
+    //공유하기
+    function ShareLink() {
+    	$('#share_btn').click(function(event) {
+    		var speed = 0;
+    		if ($(this).next('.share_link').css('display')=='none') {
+    			$('.share_link').slideDown(speed);
+    		}
+    		else {
+    			$('.share_link').slideUp(speed);
+    		}
+    	});
+    }
+
+
+    //전체메뉴
+    //function show_fullmenu()
+    //{
+    //	if($("#fullmenu_lay").is(":hidden"))
+    //	{
+    //		$("#fullmenu_lay").show();
+    //	}
+    //}
+
+    //전체메뉴 Focus (웹접근성)
+    function fullmenuFocus() {
+        var speed = 0,
+            obj = '#fullmenu',					//object
+        	item = '#fullmenu .fullmenu_wrap',	//selector
+            focusOut = '#menu_area';           //focus out
+
+        $(obj).focusin(function(event) {
+            if($(this).children(item).is(":hidden")) {
+                $(item).removeClass('focusActive');
+                $(this).children(item).addClass('focusActive');
+
+                //+, - 버튼이미지 추가
+                //$(obj).removeClass('select');
+                //$(this).addClass('select');
+            }
+        });
+
+        $(focusOut).focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+
+        $('.search_area').focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+    };
+
+    //통합검색
+    function show_search()
+    {
+    	if($("#search_lay").is(":hidden"))
+    	{
+    		$("#search_lay").show();
+    	}
+    }
+
+
+    //주메뉴 Focus (웹접근성)
+    function MenuFocus() {
+        var speed = 0,
+            obj = '#lnb_menu > ul > li',					//object
+            item = '#lnb_menu .menu_depth',					//selector
+            focusOut = '.location a';                       //focus out
+
+        //Depth3
+        var obj2 = '.menu_depth_detail .depth',
+        	item2 = '.menu_depth_detail .menu_3depth',
+            focusOut2 = '.menu_depth_detail > ul > li > span > a';
+
+        $(obj).focusin(function(event) {
+            if($(this).children(item).is(":hidden")) {
+                $(item).removeClass('focusActive');
+                $(this).children(item).addClass('focusActive');
+
+                //+, - 버튼이미지 추가
+                //$(obj).removeClass('select');
+                //$(this).addClass('select');
+            }
+        });
+        //Depth3 on
+        $(obj2).focusin(function(event) {
+            if($(this).children(item2).is(":hidden")) {
+                $(item2).removeClass('focusActive');
+                $(this).children(item2).addClass('focusActive');
+            }
+        });
+
+        $(focusOut).focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+
+        $(focusOut2).focusin(function() {
+            $(item2).removeClass('focusActive');
+        });
+
+        $('.gnb_menu').focusin(function() {
+            $(item).removeClass('focusActive');
+            $(item2).removeClass('focusActive');
+        });
+        $('#scroll_ani').focusin(function() {
+            $(item).removeClass('focusActive');
+            $(item2).removeClass('focusActive');
+        });
+    };
+
+
+    //서브 프레임 side_menu
+    function SideMenu() {
+    	$('#side_menu > ul > li.depth > a').click(function(event) {
+    		var speed = 350;
+    		if ($(this).next('#side_menu .menu_depth').css('display')=='none') {
+    			$('#side_menu .menu_depth').slideUp(speed);
+    			$(this).next('#side_menu .menu_depth').slideDown(speed);
+    			$('#side_menu > ul > li.depth > a').removeClass('on');
+    			$(this).addClass('on');
+    		}
+    		//else {
+    		//	$('#side_menu .menu_depth').slideUp(speed);
+    		//	$('#side_menu > ul > li.depth > a').removeClass('on');
+    		//}
+    	});
+    }
+
+    function MobileMenu() {
+    	$('#lnb_menu > ul > li > a').click(function(event) {
+    		var speed = 350;
+    		var winWidth = $(window).outerWidth();
+
+    		if(winWidth <= 1023) {
+    			if ($(this).next('#lnb_menu .menu_depth').css('display')=='none') {
+    				$('#lnb_menu .menu_depth').slideUp(speed);
+    				$(this).next('#lnb_menu .menu_depth').slideDown(speed);
+    				$('#lnb_menu > ul > li > a').removeClass('on');
+    				$(this).addClass('on');
+    			}
+    			//else {
+    			//	$('#lnb_menu .menu_depth').slideUp(speed);
+    			//	$('#lnb_menu > ul > li > a').removeClass('on');
+    			//}
+
+    			//모바일 링크 클릭시 무력화
+    			return false;
+    		}
+    	});
+    }
+
+    function MobileMenu_3depth() {
+    	$('#lnb_menu > ul > li .menu_depth .menu_depth_detail > ul > li.depth > span').click(function(event) {
+    		var speed = 350;
+    		var winWidth = $(window).outerWidth();
+
+    		if(winWidth <= 1023) {
+    			if ($(this).next('#lnb_menu .menu_3depth').css('display')=='none') {
+    				$('#lnb_menu .menu_3depth').slideUp(speed);
+    				$(this).next('#lnb_menu .menu_3depth').slideDown(speed);
+    				$('#lnb_menu > ul > li .menu_depth .menu_depth_detail > ul > li.depth > span').removeClass('on');
+    				$(this).addClass('on');
+    			}
+    			else {
+    				$('#lnb_menu .menu_3depth').slideUp(speed);
+    				$('#lnb_menu > ul > li .menu_depth .menu_depth_detail > ul > li.depth > span').removeClass('on');
+    			}
+
+    			//모바일 링크 클릭시 무력화
+    			return false;
+    		}
+    	});
+    }
+
+
+    //분야별정보 뎁스 메뉴
+    function AreaDepth() {
+    	$('.area_depth_menu .menu_depth dt').click(function(event) {
+    		var speed = 400;
+    		var winWidth = $(window).outerWidth();
+
+    		if(winWidth < 768) {
+    			if ($(this).next('.area_depth_menu .menu_depth dd').css('display')=='none') {
+    				$('.area_depth_menu .menu_depth dd').slideUp(speed);
+    				$(this).next('.area_depth_menu .menu_depth dd').slideDown(speed);
+    				$('.area_depth_menu .menu_depth dt').removeClass('on');
+    				$(this).addClass('on');
+    			}
+    			else {
+    				$('.area_depth_menu dd').slideUp(speed);
+    				$('.area_depth_menu dt').removeClass('on');
+    			}
+    		}
+    	});
+    }
+
+
+    //유관기관 바로가기
+    //function SiteLink() {
+    //	$('.site_link dt').click(function(event) {
+    //		var speed = 400;
+    //		if ($(this).next('.site_link dd').css('display')=='none') {
+    //			$('.site_link dd').slideUp(speed);
+    //			$(this).next('.site_link dd').slideDown(speed);
+    //			$('.site_link dt').removeClass('on');
+    //			$(this).addClass('on');
+    //		}
+    //		else {
+    //			$('.site_link dd').slideUp(speed);
+    //			$('.site_link dt').removeClass('on');
+    //		}
+    //	});
+    //}
+
+    //유관기관 바로가기 Focus (웹접근성)
+    function SiteLinkFocus() {
+        var speed = 0,
+            obj = '.site_link > dl',		//object
+        	item = '.site_link > dl dd',	//selector
+            focusOut = '.footer';           //focus out
+
+        $(obj).focusin(function(event) {
+            if($(this).children(item).is(":hidden")) {
+                $(item).removeClass('focusActive');
+                $(this).children(item).addClass('focusActive');
+
+                //+, - 버튼이미지 추가
+                //$(obj).removeClass('select');
+                //$(this).addClass('select');
+            }
+        });
+
+        $(focusOut).focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+
+        $('.go-top').focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+
+        $('.footer_banner_area').focusin(function() {
+            $(item).removeClass('focusActive');
+        });
+    };
+
+
+    //통합검색 상세검색 레이어
+    function DetailSearch() {
+    	$('.detail_search_view').click(function(event) {
+    		var speed = 0;
+    		if ($(this).next('#detail_search_lay').css('display')=='none') {
+    			$('#detail_search_lay').toggle(speed);
+    		}
+    		else {
+    			$('#detail_search_lay').toggle(speed);
+    		}
+    	});
+    }
+
+
+    //개인정보 수집 및 이용에 대한 동의 안내
+    function ArAgreeView() {
+    	$('#agree_view').click(function(event) {
+    		var speed = 0;
+    		if ($(this).next('#agree_lay').css('display')=='none') {
+    			$('#agree_lay').toggle(speed);
+    		}
+    		else {
+    			$('#agree_lay').toggle(speed);
+    		}
+    	});
+    }
+
+
+    //아코디언
+    function accordion(obj) {
+    	var speed = 400;															//animation speed
+
+    	$(obj + ' dt .open').on('click', function() {
+    		if ($(this).parents('dt').next('dd').css('display')=='none') {
+    			$(obj + ' dd').slideUp(speed);										//전체 dd 초기화
+    			$(this).parents('dt').next('dd').slideDown(speed);					//해당 dd 보이기
+
+    			$(obj + ' .open').removeClass('active');							//클래스 초기화
+    			$(this).addClass('active');											//클래스 추가
+    		}
+    		else {
+    			$(obj + ' dd').slideUp(speed);										//본인 dd 숨김
+    			$(obj + ' .open').removeClass('active');							//클래스 초기화
+    		}
+
+    		return false;
+    	});
+    }
+
+
+
+    /* ====================================================================================================================
+    //팝업(popup)
+    * ====================================================================================================================*/
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+      }
+
+      return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+
+
+    $(document).ready(function($) {
+    	//ie하위 브라우저시 실행
+        if(IEVersionCheck() == 8 || IEVersionCheck() == 7 || IEVersionCheck() == 5) {
+            var error_browser = '';
+            error_browser += '<div class="not-browser">';
+            error_browser += '  <div class="warning"><span></span></div>';
+            error_browser += '  <h1 class="error-title">현재 사용중인 브라우저는 지원되지 않습니다.<br><span class="sub">(In this broser isn&#39;t supported.)</span></h1>';
+            error_browser += '  <p class="error-text">Microsoft의 지원 종료 된 브라우저를 사용하고 있습니다.</p>';
+            error_browser += '  <p class="error-text">최신 버전의 Internet Explorer, Chroem, Safari, Firefox, Microsoft Edge<br>브라우저를 이용해 주세요.</p>';
+            error_browser += '  <div style="margin-top: 20px;"><a href="https://www.google.co.kr/chrome/browser/desktop/index.html" class="btn blue">크롬 브라우저 다운로드</a></div>';
+            error_browser += '</div>';
+
+            $('body').html(error_browser);
+        }
+        else {
+
+
+        	LanguageMenu(); //언어선택
+        	SnadMail(); //메일 보내기
+        	ShareLink(); //공유하기
+        	MenuFocus(); //주메뉴 Focus (웹접근성)
+        	fullmenuFocus(); // 전체메뉴 Focus (웹접근성)
+        	SideMenu(); //서브 프레임 side_menu
+        	MobileMenu(); //모바일 주메뉴
+        	MobileMenu_3depth(); //모바일 주메뉴
+        	SiteLinkFocus(); //유관기관 바로가기 Focus (웹접근성)
+        	AreaDepth(); //분야별정보 뎁스 메뉴
+        	DetailSearch(); //통합검색 상세검색 레이어
+        	ArAgreeView(); //개인정보 수집 및 이용에 대한 동의 안내
+
+
+
+        	//모바일 주메뉴
+        	var speed = 350;
+        	$("#mainmenu").click(function(event) {
+        		$("#menu_area").animate({left: "0"}, speed);
+        		$('#wrap').after('<div class="blackBg"></div>');
+        	});
+        	$(".menu_close").click(function(event) {
+        		$("#menu_area").animate({left: "-100%"}, speed);
+        		$('.blackBg').remove();
+        	});
+
+
+
+        	//차고지 증명제 아코디언 실행
+        	accordion('.accordion_list');
+        	//FAQ 아코디언 실행
+        	accordion('.board-accordion.faq');
+
+        	//Top 버튼
+        	// hide .go-top first
+        	$(".go-top").hide();
+
+        	// fade in .go-top
+        	$(function () {
+        		$(window).scroll(function () {
+        			if ($(this).scrollTop() > 150) {
+        				$('.go-top').fadeIn();
+        			} else {
+        				$('.go-top').fadeOut();
+        			}
+        		});
+
+        		// scroll body to 0px on click
+        		$('.go-top a').click(function () {
+        			$('body,html').animate({
+        				scrollTop: 0
+        			}, 800);
+        			return false;
+        		});
+        	});
+
+
+        	//관련배너
+        	if($('.footer_banner .banner_list li').length > 6) {
+        		$('.footer_banner .banner_list').bxSlider({
+        			auto:'true',
+        			autoControls:'true',
+        			autoControlsCombine:'true',
+        			pagerCustom:'false',
+        			infiniteLoop:'false',
+        			nextSelector:'#fb_next',
+        			prevSelector:'#fb_prev',
+        			autoControlsSelector:'#fb_control',
+        			nextText:'다음',
+        			prevText:'이전',
+        			startText:'시작',
+        			stopText:'정지',
+        			minSlides:1,
+        			maxSlides:6,
+        			slideWidth:170,
+        			moveSlides:1,
+        			speed:200
+        		});
+        		$('.bx-controls').show();
+        		$('#fb_control .bx-controls-auto').click(function(event){
+    				$(this).find('a').focus();
+    			});
+        	}
+
+
+        	//서비스 바로가기
+        	if($('.service_shortcut .shortcut_link ul li').length > 4) {
+        		$('.service_shortcut .shortcut_link ul').bxSlider({
+        			//auto:'true',
+        			autoControls:'true',
+        			autoControlsCombine:'true',
+        			pagerCustom:'false',
+        			infiniteLoop:'false',
+        			nextSelector:'#ss_next',
+        			prevSelector:'#ss_prev',
+        			nextText:'다음',
+        			prevText:'이전',
+        			startText:'시작',
+        			stopText:'정지',
+        			minSlides:1,
+        			maxSlides:6,
+        			slideWidth:180,
+        			moveSlides:1,
+        			speed:200
+        		});
+        		$('.bx-controls').show();
+        	}
+
+
+        	//시정 일정
+        	//	if($('.sijung_schedule .date_list ul li').length > 7) {
+        	//		$('.sijung_schedule .date_list ul').bxSlider({
+        	//			autoControlsCombine:'true',
+        	//			pagerCustom:'false',
+        	//			nextSelector:'.date_next',
+        	//			prevSelector:'.date_prev',
+        	//			nextText:'다음 일',
+        	//			prevText:'이전 일',
+        	//			minSlides:7,
+        	//			maxSlides:7,
+        	//			slideWidth:90
+        	//		});
+        	//		$('.bx-controls').show();
+        	//	}
+
+
+        	//이미지 슬라이드
+        	if($('.img_slide_list li').length > 1) {
+        		$('.img_slide_list').bxSlider({
+        		autoControls:'true',
+        		autoControlsCombine:'true',
+        		nextText:'다음',
+        		prevText:'이전',
+        		nextSelector:'.img_slide_next',
+        		prevSelector:'.img_slide_prev',
+        		pagerSelector:'.img_slide_pager'
+        		});
+        		$('.bx-controls').show();
+        	}
+
+
+        	//레이어 팝업
+        	if($('.main-popup').size() >= 1) {                                                  //main layer popup
+        	      cookiedata = document.cookie;                                                   //쿠키 조회
+        	      var cookieArray = cookiedata.split(';');                                        //쿠키 배열 만들기
+        	      var cookieCount = cookieArray.length;                                           //쿠키 개수
+
+        	      $(".main-popup").show();                                                        //팝업 show
+
+        	      for (var i = 0; i < cookieCount; i++) {
+        	          //console.log('cookie[' + i + '] = ' + cookieArray[i]);
+
+        	          if(i >= 1) {
+        	              cookieCut = cookieArray[i].substring(1, cookieArray[i].length-2);       //뒤에 문자열 자르기 (=y) + 앞에 여백포함
+        	          }
+        	          else {
+        	              cookieCut = cookieArray[i].substring(0, cookieArray[i].length-2);       //뒤에 문자열 자르기 (=y)
+        	          }
+
+        	          if(cookieArray[i]) {
+        	              $("input[name='"+cookieCut+"']").parents('.main-popup').hide();         //쿠키 있을 시 팝업 숨김
+        	          }
+        	      }
+
+        	      $(".main-popup .close").click(function(){
+        	          var cookieName = $(this).parents('.today-close').find('input').attr('name');    //해당 input name 가져오기
+
+        	          if($("input[name='"+cookieName+"']").is(":checked") == true) {              //오늘하루그만보기 체크시
+        	              setCookie(cookieName, "Y", 1);                                          //쿠키생성
+        	          }
+
+        	          $(this).parents('.main-popup').hide();                                      //해당 팝업 숨김
+
+        	          return false;
+        	      });
+
+        	  }
+
+        }
+
+    });
+
+
+    /* ====================================================================================================================
+    * window resize
+    * ====================================================================================================================*/
+    $(window).resize(function(){
+    	if(this.resizeTO) {
+    		clearTimeout(this.resizeTO);
+    	}
+    	this.resizeTO = setTimeout(function() {
+    		$(this).trigger('resizeEnd');
+    	}, 300);
+    });
+    $(window).on('resizeEnd', function() {
+    	//main_menuCheck();
+
+        var winWidth = $(window).outerWidth();
+    	if(winWidth >= 1024) {
+            //모바일에서 메뉴 닫지 않고 창 크기를 키우는 경우
+            //$('#lnb_menu > ul > li > a').removeClass('on');
+            //$('#lnb_menu .menu_depth').hide();
+            $('#lnb_menu .menu_depth').removeClass('focusActive');
+            $('#lnb_menu .menu_depth').hide();
+            $('#lnb_menu .menu_3depth').hide();
+            $('.blackBg').hide();
+        }
+        else {
+            //$('#lnb_menu > ul > li').removeClass('on');
+            $('.blackBg').show();
+        };
+    });
+    </script>
     <div id="sub">
         <header id="header">
 
@@ -275,7 +881,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">음식점<em class="hide">펼치기</em></a>
+                                <li><a href="#">음식점<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">전체</a></li>
@@ -291,7 +897,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">숙박<em class="hide">펼치기</em></a>
+                                <li><a href="#">숙박<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">전체</a></li>
@@ -304,7 +910,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">쇼핑<em class="hide">펼치기</em></a>
+                                <li><a href="#">쇼핑<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">전체</a></li>
@@ -316,7 +922,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">제주이야기<em class="hide">펼치기</em></a>
+                                <li><a href="#">제주이야기<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">문화와역사 </a></li>
@@ -330,7 +936,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">여행필수정보<em class="hide">펼치기</em></a>
+                                <li><a href="#">여행필수정보<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">날씨</a></li>
@@ -344,7 +950,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">제주여행추천<em class="hide">펼치기</em></a>
+                                <li><a href="#">제주여행추천<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">일정 추천</a></li>
@@ -356,7 +962,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li ><a href="#">나의 여행<em class="hide">펼치기</em></a>
+                                <li><a href="#">나의 여행<em class="hide">펼치기</em></a>
                                     <div class="depth2">
                                         <ul class="clfix">
                                             <li><a href="#">나의 프로필</a></li>
@@ -370,12 +976,9 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <!-- <li class="campaign"><a href="https://www.visitjeju.net/campaign" target="_blank"><img src="/image/common/logo_campaign.png" alt="제주여행공유"></a></li> -->
                             </ul>
                         </div>
-                        <div class="gnb_btm">
-                            <div class="flex"><a href="#" class="item"><span>KOR</span></a><a href="#" class="item"><span>ENG</span></a><a href="#" class="item"><span>JPN</span></a><a href="#" class="item"><span>CHN</span></a></div>
-                        </div><a href="#" class="allmenu_close"><span class="hide">메뉴닫기</span></a></div>
+                        <a href="#" class="allmenu_close"><span class="hide">메뉴닫기</span></a></div>
                 </div><a href="#" class="btn_sear"><span class="hide">검색</span></a>
                 <div class="total_search_bx">
                     <div class="dimm"></div>
