@@ -1,10 +1,30 @@
 @charset "utf-8";
-/* 모바일 부터 시작 */
+/* PC 부터 시작 */
 /* 처리해야 할 일
     1. 폰트
     2. 웹표준
     3. 레이아웃
  */
+
+
+
+/* layout_ common */
+.wrapper{width:1200px;margin:0 auto;}
+
+
+
+ @media only screen and (max-width:1199px){
+ 	.wrapper{width:1024px}
+ }
+ @media only screen and (max-width:1024px){
+ 	.wrapper{width:98%;}
+ }
+
+
+
+
+
+
 
 
 /* container area */
@@ -36,5 +56,5 @@
 @media only screen and (min-width:1000px) {}
 
 @media only screen and (min-width:1200px) {
-    .wrapper{width:1200px;margin:0 auto;padding:30px 0;}
+
 }
