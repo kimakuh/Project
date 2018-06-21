@@ -147,7 +147,7 @@
       display: block;
       color: #fff;
       line-height: 40px;
-      padding: 0 10px;
+      padding: 0 15px;
     }
 
 
@@ -206,7 +206,7 @@
 
   <script>
     //브라우저 버전 체크
-    var IEVersionCheck = function() {
+    var IEVersionCheck = function () {
 
       var word,
         version = "N/A",
@@ -264,16 +264,19 @@
 
 
 
-    $(document).ready(function($) {
+    $(document).ready(function ($) {
       //ie하위 브라우저시 실행
       if (IEVersionCheck() == 8 || IEVersionCheck() == 7 || IEVersionCheck() == 5) {
         var error_browser = '';
         error_browser += '<div class="not-browser">';
         error_browser += '  <div class="warning"><span></span></div>';
-        error_browser += '  <h1 class="error-title">현재 사용중인 브라우저는 지원되지 않습니다.<br><span class="sub">(In this broser isn&#39;t supported.)</span></h1>';
+        error_browser +=
+          '  <h1 class="error-title">현재 사용중인 브라우저는 지원되지 않습니다.<br><span class="sub">(In this broser isn&#39;t supported.)</span></h1>';
         error_browser += '  <p class="error-text">Microsoft의 지원 종료 된 브라우저를 사용하고 있습니다.</p>';
-        error_browser += '  <p class="error-text">최신 버전의 Internet Explorer, Chroem, Safari, Firefox, Microsoft Edge<br>브라우저를 이용해 주세요.</p>';
-        error_browser += '  <div style="margin-top: 20px;"><a href="https://www.google.co.kr/chrome/browser/desktop/index.html" class="btn blue">크롬 브라우저 다운로드</a></div>';
+        error_browser +=
+          '  <p class="error-text">최신 버전의 Internet Explorer, Chroem, Safari, Firefox, Microsoft Edge<br>브라우저를 이용해 주세요.</p>';
+        error_browser +=
+          '  <div style="margin-top: 20px;"><a href="https://www.google.co.kr/chrome/browser/desktop/index.html" class="btn blue">크롬 브라우저 다운로드</a></div>';
         error_browser += '</div>';
 
         $('body').html(error_browser);
@@ -292,14 +295,6 @@
         AreaDepth(); //분야별정보 뎁스 메뉴
         DetailSearch(); //통합검색 상세검색 레이어
         ArAgreeView(); //개인정보 수집 및 이용에 대한 동의 안내
-
-
-
-
-
-
-
-
       }
 
 
@@ -316,15 +311,29 @@
       <div class="top_util">
         <div class="wrapper">
           <ul class="link">
-            <li><a href="#">제주시포털</a></li>
-            <li><a href="#">비짓제주</a></li>
+            <li>
+              <a href="#">제주시포털</a>
+            </li>
+            <li>
+              <a href="#">비짓제주</a>
+            </li>
           </ul>
           <ul class="sns">
-            <li><a href="#">facebook</a></li>
-            <li><a href="#">카카오스토리</a></li>
-            <li><a href="#">카카오스토리</a></li>
-            <li><a href="#">다음블로그</a></li>
-            <li><a href="#">네이버블로그</a></li>
+            <li>
+              <a href="#">facebook</a>
+            </li>
+            <li>
+              <a href="#">카카오스토리</a>
+            </li>
+            <li>
+              <a href="#">카카오스토리</a>
+            </li>
+            <li>
+              <a href="#">다음블로그</a>
+            </li>
+            <li>
+              <a href="#">네이버블로그</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -333,11 +342,14 @@
 
       <div class="topnav" id="myTopnav">
         <div class="wrapper">
-          <a href="#home" class="active">Home</a>
+          <h1>
+            <a href="#">탐라는 제주</a>
+          </h1>
+          <!-- <a href="#home" class="active">Home</a> -->
           <div class="dropdown">
             <button class="dropbtn">관광지
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">전체</a>
               <a href="#">자연</a>
@@ -352,8 +364,8 @@
           </div>
           <div class="dropdown">
             <button class="dropbtn">음식점
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">전체</a>
               <a href="#">음식점</a>
@@ -365,8 +377,8 @@
           </div>
           <div class="dropdown">
             <button class="dropbtn">숙박
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">호텔</a>
               <a href="#">리조트</a>
@@ -379,8 +391,8 @@
           </div>
           <div class="dropdown">
             <button class="dropbtn">커뮤니티
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">공지사항</a>
               <a href="#">여행일정</a>
@@ -391,8 +403,8 @@
           <a href="#about">여행큐레이션</a>
           <div class="dropdown">
             <button class="dropbtn">제주여행꿀팁
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">전체</a>
               <a href="#">날씨</a>
@@ -404,8 +416,8 @@
           </div>
           <div class="dropdown">
             <button class="dropbtn">나의 여행
-            <i class="fa fa-caret-down"></i>
-          </button>
+              <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
               <a href="#">전체</a>
               <a href="#">나의 여행일정</a>
@@ -442,7 +454,206 @@
         <div class="location_wrap">
 
         </div>
+
+
         <div class="content_wrap">
+
+          <div class="board_wrap type01">
+            <div class="box_wrap clear">
+              <div class="box">
+                <a href="#">
+                  <span class="category">관광지</span>
+                  <img src="img/common/board_img.gif" alt="성산일출봉(UNESCO 세계자연유산)" />
+                </a>
+                <p class="box_title">
+                  <a href="#">제목이길어졌을때제목이길어졌을때제목이길어졌을때제목이길어졌을때</a>
+                </p>
+                <p class="hashtag">
+                  <a href="#">#일출</a>
+                  <a href="#">#오름</a>
+                  <a href="#">#경관/포토</a>
+                </p>
+                <p class="mytag">
+                  <a href="#">#부모</a>
+                </p>
+                <div class="item_count_area">
+                  <ul>
+                    <li class="like">
+                      <a href="#">좋아요</a>
+                      <span>32</span>
+                    </li>
+                    <li class="zzim">
+                      <a href="#">찜하기</a>
+                      <span>637</span>
+                    </li>
+                    <li class="review">
+                      <a href="#">리뷰</a>
+                      <span>736</span>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <!-- box -->
+              <div class="box">
+                <a href="#">
+                  <span class="category">관광지</span>
+                  <img src="img/common/board_img.gif" alt="성산일출봉(UNESCO 세계자연유산)" />
+                </a>
+                <p class="box_title">
+                  <a href="#">성산일출봉(UNESCO 세계자연유산)</a>
+                </p>
+                <p class="hashtag">
+                  <a href="#">#일출</a>
+                  <a href="#">#오름</a>
+                  <a href="#">#경관/포토</a>
+                </p>
+                <p class="mytag">
+                  <a href="#">#커플</a>
+                  <a href="#">#흐림</a>
+                  <a href="#">#봄</a>
+                </p>
+                <div class="item_count_area">
+                  <ul>
+                    <li class="like">
+                      <a href="#">좋아요</a>
+                      <span>32</span>
+                    </li>
+                    <li class="zzim">
+                      <a href="#">찜하기</a>
+                      <span>637</span>
+                    </li>
+                    <li class="review">
+                      <a href="#">리뷰</a>
+                      <span>736</span>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <!-- box -->
+              <div class="box">
+                <a href="#">
+                  <span class="category">관광지</span>
+                  <img src="img/common/board_img.gif" alt="성산일출봉(UNESCO 세계자연유산)" />
+                </a>
+                <p class="box_title">
+                  <a href="#">성산일출봉(UNESCO 세계자연유산)</a>
+                </p>
+                <p class="hashtag">
+                  <a href="#">#일출</a>
+                  <a href="#">#오름</a>
+                  <a href="#">#경관/포토</a>
+                </p>
+                <p class="mytag">
+                  <a href="#">#부모</a>
+                </p>
+                <div class="item_count_area">
+                  <ul>
+                    <li class="like">
+                      <a href="#">좋아요</a>
+                      <span>32</span>
+                    </li>
+                    <li class="zzim">
+                      <a href="#">찜하기</a>
+                      <span>637</span>
+                    </li>
+                    <li class="review">
+                      <a href="#">리뷰</a>
+                      <span>736</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- box -->
+            </div>
+            <!-- box_wrap-->
+
+            <div class="paging">
+
+            </div>
+
+
+
+          </div>
+          <!-- board_wrap-->
+          <style type="text/css">
+            .board_wrap {
+              margin-bottom: 30px;
+            }
+
+            .box_wrap {
+              margin-left: -2%;
+
+            }
+
+            .box {
+              position: relative;
+              float: left;
+              width: 31.3%;
+              margin-left: 2%;
+              border: 1px solid #ededed;
+              box-sizing: border-box;
+            }
+
+            .box a {
+              display: block;
+            }
+
+            .box a span.category {
+              display: inline-block;
+              position: absolute;
+              left: 0;
+              top: 0;
+              padding: 2px 5px;
+              color: #fff;
+              background: #2d2d2d
+            }
+
+            .box a img {
+              width: 100%;
+            }
+
+            .box p.box_title {
+              margin: 15px;
+              text-align: center;
+            }
+
+            .box p.box_title a {
+              overflow: hidden;
+              font-size: 1.5em;
+              font-weight: bold;
+              color: #1b1b1b;
+              line-height: 20px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            .box p{
+              margin: 15px;
+              text-align: center;
+            }
+
+            .box p.hashtag a {
+              display: inline-block;
+              color: #2168f6;
+            }
+            
+            .box p.mytag a{
+              display: inline-block;
+              color: #535353;
+            }
+            .item_count_area{}
+            .item_count_area ul{overflow: hidden;}
+            .item_count_area ul li{float: left;padding-top:30px;width:33.3%;text-align:center;}
+            .item_count_area ul li a{font-size:13px;line-height:14px;color:#535353;}
+            .item_count_area ul li.like {background:url(img/common/ico_like.png) no-repeat 50% 0;}
+            .item_count_area ul li.zzim{background:url(img/common/ico_zzim.png) no-repeat 50% 0;}
+            .item_count_area ul li.review {background:url(img/common/ico_review.png) no-repeat 50% 0;}
+            .item_count_area ul li span{display:inline-block;margin:5px;font-size:12px;line-height:14px;color:#959595;}
+            
+          </style>
+
           <!-- 제목 -->
           <h3>h3 페이지제목</h3>
           <h4>h4 제목이 들어간다.</h4>
@@ -450,7 +661,8 @@
           <!-- 제목과 텍스트 -->
           <h3>h3 페이지제목</h3>
           <div>div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트</div>
-          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
+          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가
+            들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
           <ul>
             <li>리스트</li>
             <li>리스트</li>
@@ -460,7 +672,8 @@
           </ul>
           <h4>h4 제목이 들어간다.</h4>
           <div>div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트</div>
-          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
+          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가
+            들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
           <ul>
             <li>리스트</li>
             <li>리스트</li>
@@ -468,8 +681,8 @@
             <li>리스트</li>
             <li>리스트</li>
           </ul>
-          <table summary="위탁을 받는자(수탁자), 위탁을 하는 업무, 위탁기간으로 구성된 개인정보 위탁현황 표" class="table-type01 w100 center">
-            <caption>개인정보 위탁현황</caption>
+          <table class="table-type01 w100 center">
+            <caption>위탁을 받는자(수탁자), 위탁을 하는 업무, 위탁기간으로 구성된 개인정보 위탁현황 표</caption>
             <thead>
               <tr>
                 <th>위탁을 받는자(수탁자)</th>
@@ -501,13 +714,16 @@
             </thead>
             <tbody>
               <tr>
-                <td class="align_left word_keep_all"> 국민은행, 신한은행, 우리은행, 하나은행, 한국외환은행, 한국스탠다드차타드은행, 한국씨티은행, 경남은행, 광주은행, 대구은행, 부산은행, 전북은행, 제주은행, 중소기업은행, 농업은행, 수산업협동조합중앙회, 서울보증보험</td>
+                <td class="align_left word_keep_all"> 국민은행, 신한은행, 우리은행, 하나은행, 한국외환은행, 한국스탠다드차타드은행, 한국씨티은행, 경남은행, 광주은행, 대구은행, 부산은행, 전북은행, 제주은행, 중소기업은행, 농업은행, 수산업협동조합중앙회,
+                  서울보증보험
+                </td>
               </tr>
             </tbody>
           </table>
           <h5>h5 제목이 들어간다.</h5>
           <div>div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트div에텍스트</div>
-          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
+          <p>서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가
+            들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.서브텍스트가 들어갑니다.</p>
           <ul>
             <li>리스트타입1</li>
             <li>리스트</li>
@@ -523,8 +739,8 @@
             <li>리스트타입2</li>
             <li>리스트타입2</li>
           </ul>
-          <table summary="위탁을 받는자(수탁자), 위탁을 하는 업무, 위탁기간으로 구성된 개인정보 위탁현황 표" class="table-type01 w100 center">
-            <caption>개인정보 위탁현황</caption>
+          <table class="table-type01 w100 center">
+            <caption>위탁을 받는자(수탁자), 위탁을 하는 업무, 위탁기간으로 구성된 개인정보 위탁현황 표</caption>
             <thead>
               <tr>
                 <th>위탁을 받는자(수탁자)</th>
@@ -554,11 +770,21 @@
       <div class="wrapper">
         <div class="foot_link">
           <ul>
-            <li><a href="#">개인정보취급방침</a></li>
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#">홈페이지 개선의견</a></li>
-            <li><a href="#">관광업체등록문의</a></li>
-            <li><a href="#">사이트맵</a></li>
+            <li>
+              <a href="#">개인정보취급방침</a>
+            </li>
+            <li>
+              <a href="#">이용약관</a>
+            </li>
+            <li>
+              <a href="#">홈페이지 개선의견</a>
+            </li>
+            <li>
+              <a href="#">관광업체등록문의</a>
+            </li>
+            <li>
+              <a href="#">사이트맵</a>
+            </li>
           </ul>
         </div>
         <div class="foot_info">
