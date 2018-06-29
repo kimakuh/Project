@@ -58,3 +58,211 @@
 @media only screen and (min-width:1200px) {
 
 }
+
+
+
+/* board common */
+
+
+.board_wrap {
+  margin-bottom: 30px;
+}
+
+.box_wrap {
+  margin: 0 0 2% -2%;
+}
+
+.box {
+  position: relative;
+  float: left;
+  width: 31.3%;
+  margin-left: 2%;
+  border: 1px solid #ededed;
+  box-sizing: border-box;
+}
+
+.box a {
+  display: block;
+}
+
+.box a span.category {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2px 5px;
+  color: #fff;
+  background: #2d2d2d
+}
+
+.box a img {
+  width: 100%;
+}
+
+.box p.box_title {
+  margin: 15px;
+  text-align: center;
+}
+
+.box p.box_title a {
+  overflow: hidden;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1b1b1b;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.box p {
+  margin: 15px;
+  text-align: center;
+}
+
+.box p.hashtag a {
+  display: inline-block;
+  color: #2168f6;
+}
+
+.box p.mytag a {
+  display: inline-block;
+  color: #535353;
+}
+
+.item_count_area {}
+
+.item_count_area ul {
+  overflow: hidden;
+}
+
+.item_count_area ul li {
+  float: left;
+  padding-top: 30px;
+  width: 33.3%;
+  text-align: center;
+}
+
+.item_count_area ul li a {
+  font-size: 13px;
+  line-height: 14px;
+  color: #535353;
+}
+
+.item_count_area ul li.like {
+  background: url(../img/common/ico_like.png) no-repeat 50% 0;
+}
+
+.item_count_area ul li.zzim {
+  background: url(../img/common/ico_zzim.png) no-repeat 50% 0;
+}
+
+.item_count_area ul li.review {
+  background: url(../img/common/ico_review.png) no-repeat 50% 0;
+}
+
+.item_count_area ul li span {
+  display: inline-block;
+  margin: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #959595;
+}
+
+
+
+/* paging */
+
+
+.paging {
+    position: relative;
+    text-align: center;
+    padding-top: 70px
+}
+
+.paging .page-wrap {
+    display: inline-block
+}
+
+.paging .page-wrap:after {
+    display: block;
+    content: "";
+    clear: both
+}
+
+.paging .page-wrap a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px
+}
+
+.paging .page-wrap a.page-first, .paging .page-wrap a.page-last {
+    margin: 0 3px
+}
+
+.paging .page-count {
+    margin: 0 18px;
+    display: inline-block
+}
+
+.paging a.current {
+    color: #fff !important;
+    font-weight: 700;
+    border-color: #006ef0;
+    background-color: #006ef0
+}
+
+.paging a:hover {
+    color: #006ef0;
+    border-color: #006ef0
+}
+
+.paging .btnL, .paging .btnR {
+    padding: 0;
+    margin-top: -19px
+}
+
+.paging .btnL .btn {
+    margin-right: 6px
+}
+
+.paging .btnR .btn {
+    margin-left: 6px
+}
+
+.paging.center .page-wrap {
+    position: absolute;
+    left: 0;
+    width: 100%
+}
+
+.spr_com {
+    display: inline-block;
+    background: url(/image/common/spr_comm.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+    vertical-align: middle
+}
+
+.spr_com.page-next {
+    background-position: -60px -100px;
+    margin-left: 30px !important
+}
+
+.spr_com.page-last {
+    background-position: -90px -100px
+}
+
+.spr_com.page-prev {
+    background-position: -30px -100px;
+    margin-right: 30px !important
+}
+
+.spr_com.page-first {
+    background-position: 0 -100px
+}
