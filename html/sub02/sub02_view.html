@@ -18,138 +18,434 @@
             font-family: 'NanumSquareRound', sans-serif;
             font-size: 14px;
         }
+
+        .container {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+
+
+        .content_wrap h3 {
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.8em;
+            color: #1b1b1b;
+            text-align: center;
+        }
+
+        .content_wrap h4 {
+            position: relative;
+            padding-left: 12px;
+            margin: 15px 0;
+            font-size: 1.5em;
+            line-height: 1.5em;
+        }
+
+        .content_wrap h4::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 4px;
+            height: 21px;
+            background-color: #006ef0;
+        }
+
+        .content_wrap h5 {
+            margin: 15px 15px 10px;
+            padding-left: 20px;
+            font-size: 1.2em;
+            line-height: 1.2em;
+            background-image: url('../img/common/h4_tit_bg.png');
+            background-repeat: no-repeat;
+        }
+
+
+        .svisual {}
+
+        .svisual img {
+            display: block;
+            height: 400px;
+            width: 100%;
+        }
+
+        .svisual_info_box_wrap {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .svisual_info_box {
+            position: absolute;
+            left: 0;
+            top: -400px;
+            width: 340px;
+            background: rgba(0, 0, 0, .5);
+            padding: 27px;
+            min-height: 340px;
+        }
+
+
+
+        .svisual_info_box h3 {
+            font-size: 32px;
+            color: #fff;
+            line-height: 35px;
+            margin-bottom: 25px;
+        }
+
+        .svisual_info_box p {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        .svisual_info_box .weather {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 90px;
+            height: 90px;
+            background: rgba(0, 0, 0, .3);
+            border-radius: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .svisual_info_box .weather img {
+            display: block;
+            margin: 15px auto;
+        }
+
+        .svisual_info {}
+
+        .svisual_info_box .info_area {}
+
+        .svisual_info_box .info_area h4 {
+            padding-bottom: 10px;
+            color: #fff;
+            font-size: 20px;
+            border-bottom: 1px solid #9398a6;
+        }
+
+        .svisual_info_box .info_area a {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #eee;
+            color: #fff;
+        }
+
+        .svisual_info_box .info_area ul {
+            margin: 30px 0;
+        }
+
+        .svisual_info_box .info_area ul li {
+            margin: 15px 0;
+        }
+
+        .svisual_info_box .info_area ul li strong {
+            display: block;
+            margin: 15px 0;
+            color: #ccc;
+        }
+
+        .svisual_info_box .info_area ul li span {
+            color: #fff;
+        }
+
+
+
+
+
+
+        .sns_area {
+            margin: 30px 0;
+        }
+
+        .sns_area ul {}
+
+        .sns_area ul li {
+            float: left;
+            position: relative;
+            width: 14.28%;
+            text-align: center;
+
+        }
+
+        .sns_area ul li:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100px;
+            background-color: #e5e5e5;
+        }
+
+        .sns_area ul li:first-child:after {
+            display: none;
+        }
+
+        .sns_area ul li a {
+            display: block;
+            font-size: 16px;
+            color: #535353;
+        }
+
+        .sns_area ul li a .icon {
+            display: inline-block;
+            height: 50px;
+            width: 100%;
+        }
+
+        .sns_area ul li a .icon.view_like_icon {
+            background: url('../../img/common/ico_view_like.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_zzim_icon {
+            background: url('../../img/common/ico_view_zzim.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_review_icon {
+            background: url('../../img/common/ico_view_review.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_schedule_icon {
+            background: url('../../img/common/ico_view_schedule.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_visit_icon {
+            background: url('../../img/common/ico_view_visit.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_hit_icon {
+            background: url('../../img/common/ico_view_hits.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a .icon.view_sns_icon {
+            background: url('../../img/common/ico_view_sns.png') no-repeat 50% 7px;
+        }
+
+        .sns_area ul li a strong {
+            display: block;
+            margin: 5px 0;
+        }
+
+
+
+        /*tab*/
+
+        .tab {
+            /* border: 1px solid #e5e5e5; */
+            border-bottom: none;
+            overflow: hidden;
+
+
+        }
+
+        .tab .tablinks {
+            box-sizing: border-box;
+            display: block;
+            float: left;
+            padding: 15px 0;
+            width: 20%;
+            background: #f4f4f4;
+            color: #959595;
+            font-size: 18px;
+            border-bottom: 2px solid #2168f6;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tab .tablinks:first-child {
+            margin-left: 0;
+        }
+
+        .tab .tablinks.active {
+            border: 2px solid #2168f6;
+            border-bottom: none;
+            color: #2168f6;
+        }
     </style>
 </head>
 
 <body>
     <div class="svisual">
         <img src="../../img/sub02/sub_visual_img.jpg" alt="제주김만복(만복이네김밥집)">
-        <div class="wrapper">
-            <div class="svisual_info_box">
-                <div class="svisual_info">
-                    <h3>제주김만복</h3>
-
-
-
-                </div>
-                <!-- svisual_info -->
-                <div class="weather">
-                    <img src="../../img/common/weather/weather_blur.png" alt="흐림">
+    </div>
+    <div class="svisual_info_box_wrap">
+        <div class="svisual_info_box">
+            <div class="svisual_info">
+                <h3>제주김만복</h3>
+                <p>(만복이네김밥집)</p>
+                <p class="hashtag">
+                    <a href="#">#일출</a>
+                    <a href="#">#오름</a>
+                    <a href="#">경관/포토</a>
+                </p>
+                <div class="info_area">
+                    <h4>기본정보</h4>
+                    <ul>
+                        <li class="clear">
+                            <strong>주소</strong>
+                            <span>제주특별자치도 제주시 삼도2동 1158-36</span>
+                        </li>
+                        <li class="clear">
+                            <strong>연락처</strong>
+                            <span>(+82) 064-759-8582</span>
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="#">길찾기</a>
+                    </p>
                 </div>
             </div>
-            <!-- svisual_info_box-->
+            <!-- svisual_info -->
+            <div class="weather">
+                <img src="../../img/common/weather/weather_blur.png" alt="흐림">
+                <strong>흐림</strong>
+            </div>
         </div>
     </div>
+    <!-- svisual_info_box-->
+
+
+
+
     <div class="container">
-        <div class="sns_area">
-            <ul>
-                <li>
-                    <a href="#">
-                        <strong>좋아요</strong>26</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>찜하기</strong>537</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>리뷰</strong>114</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>일정등록</strong>0</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>방문했어요</strong>57</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>조회</strong>19,416</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <strong>SNS 공유</strong>8</a>
-                </li>
-            </ul>
-        </div>
-        <!-- sns_area -->
-        <!-- Tab links -->
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'tab_cont01')" id="defaultOpen">이용 안내</button>
-            <button class="tablinks" onclick="openCity(event, 'tab_cont02')">사진</button>
-            <button class="tablinks" onclick="openCity(event, 'tab_cont03')">지도/주변관광지</button>
-            <button class="tablinks" onclick="openCity(event, 'tab_cont04')">리뷰</button>
-            <button class="tablinks" onclick="openCity(event, 'tab_cont05')">리뷰2</button>
-        </div>
+        <div class="content_wrap">
+            <div class="sns_area clear">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_like_icon"></span>
+                            <strong>좋아요</strong>26</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_zzim_icon"></span>
+                            <strong>찜하기</strong>537</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_review_icon"></span>
+                            <strong>리뷰</strong>114</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_schedule_icon"></span>
+                            <strong>일정등록</strong>0</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_visit_icon"></span>
+                            <strong>방문했어요</strong>57</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_hit_icon"></span>
+                            <strong>조회</strong>19,416</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon view_sns_icon"></span>
+                            <strong>SNS 공유</strong>8</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sns_area -->
+            <!-- Tab links -->
+            <div class="tab">
+                <a class="tablinks" onclick="openCity(event, 'tab_cont01')" id="defaultOpen">이용 안내</a>
+                <a class="tablinks" onclick="openCity(event, 'tab_cont02')">사진</a>
+                <a class="tablinks" onclick="openCity(event, 'tab_cont03')">지도/주변관광지</a>
+                <a class="tablinks" onclick="openCity(event, 'tab_cont04')">리뷰</a>
+                <a class="tablinks" onclick="openCity(event, 'tab_cont05')">리뷰2</a>
+            </div>
 
-        <div id="tab_cont01" class="tabcontent">
-            <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-            <h3>이용 안내</h3>
-            <ul>
-                <li>
-                    <strong>소개</strong>
-                    <span> 전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳</span>
-                </li>
-                <li>
-                    <strong>상세 정보</strong>
-                    <span> 연중무휴(재료 소진시 조기마감)</span>
-                </li>
-                <li>
-                    <strong>이용 시간</strong>
-                    <span> 평일 : 10:00 ~ 20:00 , 주말 : 10:00 ~ 20:00</span>
-                </li>
-                <li>
-                    <strong>편의시설</strong>
-                    <span>공용주차장,현금결제,카드결제,화장실,편의점,음료대,유도 및 안내시설,경보 및 피난시설</span>
-                </li>
-            </ul>
-            <p>London is the capital city of England.</p>
-        </div>
+            <div id="tab_cont01" class="tabcontent">
+                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                <h3>이용 안내 type1</h3>
+                <ul>
+                    <li>
+                        <strong>소개</strong>
+                        <span>전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳</span>
+                    </li>
+                    <li>
+                        <strong>상세 정보</strong>
+                        <span> 연중무휴(재료 소진시 조기마감)</span>
+                    </li>
+                    <li>
+                        <strong>이용 시간</strong>
+                        <span> 평일 : 10:00 ~ 20:00 , 주말 : 10:00 ~ 20:00</span>
+                    </li>
+                    <li>
+                        <strong>편의시설</strong>
+                        <span>공용주차장,현금결제,카드결제,화장실,편의점,음료대,유도 및 안내시설,경보 및 피난시설</span>
+                    </li>
+                </ul>
 
-        <div id="tab_cont02" class="tabcontent">
-            <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-            <h3>사진(59)</h3>
-            <p>Paris is the capital of France.</p>
-        </div>
 
-        <div id="tab_cont03" class="tabcontent">
-            <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-            <h3>지도/주변관광지</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-        <div id="tab_cont04" class="tabcontent">
-            <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-            <h3>리뷰1</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-        <div id="tab_cont05" class="tabcontent">
-            <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-            <h3>리뷰2</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
+                <h3>이용 안내 type2</h3>
+                <h4>소개</h4>
+                <p>전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳</p>
+                <h4>상세 정보</h4>
+                <p>연중무휴(재료 소진시 조기마감)</p>
+                <h4>이용 시간</h4>
+                <ul>
+                    <li>평일 : 10:00 ~ 20:00</li>
+                    <li>주말 : 10:00 ~ 20:00</li>
+                </ul>
+                <h4>편의시설</h4>
+                <p>공용주차장,현금결제,카드결제,화장실,편의점,음료대,유도 및 안내시설,경보 및 피난시설</p>
+            </div>
 
-        <script>
-            function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+            <div id="tab_cont02" class="tabcontent">
+                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                <h3>사진(59)</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="tab_cont03" class="tabcontent">
+                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                <h3>지도/주변관광지</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+            <div id="tab_cont04" class="tabcontent">
+                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                <h3>리뷰1</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+            <div id="tab_cont05" class="tabcontent">
+                <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                <h3>리뷰2</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <script>
+                function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
                 }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
 
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-        </script>
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+            </script>
 
 
-
+        </div>
     </div>
     <footer id="footer">
         <div class="wrapper">

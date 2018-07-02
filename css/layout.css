@@ -9,7 +9,7 @@
 
 
 /* layout_ common */
-.wrapper{width:1200px;margin:0 auto;}
+.wrapper{position:relative;width:1200px;margin:0 auto;}
 
 
 
