@@ -71,7 +71,7 @@
 .box_wrap {
   margin: 0 0 2% -2%;
 }
-
+/* 
 .box {
   position: relative;
   float: left;
@@ -127,7 +127,7 @@
 .box p.mytag a {
   display: inline-block;
   color: #535353;
-}
+} */
 
 .item_count_area {}
 
