@@ -2,325 +2,35 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>음식점 뷰</title>
+    <title>탐라는제주 - 숨어 있던 진짜 hot한 제주</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta property="og:title" content="탐라는제주">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="탐라는제주 - 숨어 있던 진짜 hot한 제주">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!-- css -->
     <link rel="stylesheet" href="../../css/common.css" />
     <link rel="stylesheet" href="../../css/layout.css" />
+    <!-- sub02 -->
+    <link rel="stylesheet" href="../../css/sub02.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../js/common/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common/jquery-ui.min.js"></script>
+
     <style type="text/css">
-        /* font */
-
         @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
-
-        body {
-            /* font-family: 'Noto Sans KR', sans-serif; */
-            font-family: 'NanumSquareRound', sans-serif;
-            font-size: 14px;
-        }
-
-        .container {
-            margin: 30px auto;
-            width: 1200px;
-        }
-
-
-
-        .content_wrap h3 {
-            margin-bottom: 25px;
-            font-size: 1.8em;
-            font-weight: bold;
-            line-height: 1.8em;
-            color: #1b1b1b;
-            text-align: center;
-        }
-
-        .content_wrap h4 {
-            position: relative;
-            padding-left: 12px;
-            margin: 15px 0;
-            font-size: 1.5em;
-            line-height: 1.5em;
-        }
-
-        .content_wrap h4::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 0;
-            width: 4px;
-            height: 21px;
-            background-color: #006ef0;
-        }
-
-        .content_wrap h5 {
-            margin: 15px 15px 10px;
-            padding-left: 20px;
-            font-size: 1.2em;
-            line-height: 1.2em;
-            background-image: url('../img/common/h4_tit_bg.png');
-            background-repeat: no-repeat;
-        }
-
-
-        .svisual {}
-
-        .svisual img {
-            display: block;
-            height: 400px;
-            width: 100%;
-        }
-
-        .svisual_info_box_wrap {
-            width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .svisual_info_box {
-            position: absolute;
-            left: 0;
-            top: -400px;
-            width: 340px;
-            background: rgba(0, 0, 0, .5);
-            padding: 27px;
-            min-height: 340px;
-        }
-
-
-
-        .svisual_info_box h3 {
-            font-size: 32px;
-            color: #fff;
-            line-height: 35px;
-            margin-bottom: 25px;
-        }
-
-        .svisual_info_box p {
-            margin: 5px 0;
-            color: #ccc;
-            font-size: 15px;
-        }
-
-        .svisual_info_box .weather {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 90px;
-            height: 90px;
-            background: rgba(0, 0, 0, .3);
-            border-radius: 100%;
-            text-align: center;
-            color: #fff;
-        }
-
-        .svisual_info_box .weather img {
-            display: block;
-            margin: 15px auto;
-        }
-
-        .svisual_info {}
-
-        .svisual_info_box .info_area {}
-
-        .svisual_info_box .info_area h4 {
-            padding-bottom: 10px;
-            color: #fff;
-            font-size: 20px;
-            border-bottom: 1px solid #9398a6;
-        }
-
-        .svisual_info_box .info_area a {
-            display: inline-block;
-            padding: 8px 15px;
-            border: 1px solid #eee;
-            color: #fff;
-        }
-
-        .svisual_info_box .info_area ul {
-            margin: 30px 0;
-        }
-
-        .svisual_info_box .info_area ul li {
-            margin: 15px 0;
-        }
-
-        .svisual_info_box .info_area ul li strong {
-            display: block;
-            margin: 15px 0;
-            color: #ccc;
-        }
-
-        .svisual_info_box .info_area ul li span {
-            color: #fff;
-        }
-
-
-
-
-
-
-        .sns_area {
-            margin: 30px 0;
-        }
-
-        .sns_area ul {}
-
-        .sns_area ul li {
-            float: left;
-            position: relative;
-            width: 14.28%;
-            text-align: center;
-
-        }
-
-        .sns_area ul li:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 1px;
-            height: 100px;
-            background-color: #e5e5e5;
-        }
-
-        .sns_area ul li:first-child:after {
-            display: none;
-        }
-
-        .sns_area ul li a {
-            display: block;
-            font-size: 16px;
-            color: #535353;
-        }
-
-        .sns_area ul li a .icon {
-            display: inline-block;
-            height: 50px;
-            width: 100%;
-        }
-
-        .sns_area ul li a .icon.view_like_icon {
-            background: url('../../img/common/ico_view_like.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_zzim_icon {
-            background: url('../../img/common/ico_view_zzim.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_review_icon {
-            background: url('../../img/common/ico_view_review.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_schedule_icon {
-            background: url('../../img/common/ico_view_schedule.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_visit_icon {
-            background: url('../../img/common/ico_view_visit.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_hit_icon {
-            background: url('../../img/common/ico_view_hits.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a .icon.view_sns_icon {
-            background: url('../../img/common/ico_view_sns.png') no-repeat 50% 7px;
-        }
-
-        .sns_area ul li a strong {
-            display: block;
-            margin: 5px 0;
-        }
-
-
-
-        /*tab*/
-
-        .tab {
-            /* border: 1px solid #e5e5e5; */
-            border-bottom: none;
-            overflow: hidden;
-
-
-        }
-
-        .tab .tablinks {
-            box-sizing: border-box;
-            display: block;
-            float: left;
-            padding: 15px 0;
-            width: 20%;
-            background: #f4f4f4;
-            color: #959595;
-            font-size: 18px;
-            border-bottom: 2px solid #2168f6;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .tab .tablinks:first-child {
-            margin-left: 0;
-        }
-
-        .tab .tablinks.active {
-            border: 2px solid #2168f6;
-            border-bottom: none;
-            color: #2168f6;
-        }
-
-
-        /* 갤러리 */
-
-        .row {
-            display: -ms-flexbox;
-            /* IE10 */
-            display: flex;
-            -ms-flex-wrap: wrap;
-            /* IE10 */
-            flex-wrap: wrap;
-            padding: 0 4px;
-        }
-
-        /* Create four equal columns that sits next to each other */
-
-        .column {
-            -ms-flex: 24%;
-            /* IE10 */
-            flex: 24%;
-            max-width: 25%;
-            padding: 0 4px;
-        }
-
-        .column img {
-            margin-top: 8px;
-            vertical-align: middle;
-        }
-
-        /* Responsive layout - makes a two column-layout instead of four columns */
-
-        @media screen and (max-width: 800px) {
-            .column {
-                -ms-flex: 50%;
-                flex: 50%;
-                max-width: 50%;
-            }
-        }
-
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
-        @media screen and (max-width: 600px) {
-            .column {
-                -ms-flex: 100%;
-                flex: 100%;
-                max-width: 100%;
-            }
-        }
     </style>
 </head>
 
 <body>
+
+        <div id="header"></div>
     <div class="svisual">
         <img src="../../img/sub02/sub_visual_img.jpg" alt="제주김만복(만복이네김밥집)">
     </div>
@@ -363,7 +73,7 @@
 
 
 
-    <div class="container">
+    <div class="container" id="sub02">
         <div class="content_wrap">
             <div class="sns_area clear">
                 <ul>
@@ -610,7 +320,16 @@
         </div>
     </div>
 
-
+    <div id="footer"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#header").load("../include/sub_header.html")
+            $("#footer").load("../include/sub_footer.html")
+            /* id 지정을 통해서도 가능합니다. 
+             $("#header").load("header.html #navbar")
+             */
+        });
+    </script>
 </body>
 
 </html>
