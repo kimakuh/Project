@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+/* board_box */
+
+        /* board_common */
+/* 
+        .box_wrap {
+            margin: 0 0 2% -2%;
+        } */
+
+        .box_warp::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            float: left;
+            border: 1px solid #ededed;
+            box-sizing: border-box;
+
+        }
+
+        .box .img_area {
+            position: relative;
+        }
+
+
+        .box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+
+        .box .img_area .category {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 5px 10px;
+            background: #222;
+            color: #fff;
+        }
+
+        .box .img_area img {
+            display: block;
+            width: 100%;
+            height: 225px;
+        }
+
+        .box .box_cont_area h4 {
+            font-size: 22px;
+            font-weight: bold;
+
+            overflow: hidden;
+            color: #1b1b1b;
+            line-height: 22px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .box .box_cont_area .location_category {
+            padding: 15px;
+
+            color: #959595;
+            line-height: 16px;
+        }
+
+        .box .box_cont_area .hashtag a {
+            display: inline-block;
+            color: #2168f6;
+        }
+
+
+        /* board_type01 */
+
+        .box.type01 {
+
+            width: 32%;
+            margin-left: 2%;
+        }
+
+        .box.type01.no_mar {
+            margin: 0;
+        }
+
+        .box.type01 .img_area {}
+
+        .box.type01 .img_area .category {}
+
+        .box.type01 .img_area img {}
+
+        .box.type01 .box_cont_area {
+            padding: 25px 10px;
+        }
+
+        .box.type01 .box_cont_area h4 {
+            text-align: center;
+        }
+
+        .box.type01 .box_cont_area .location_category {
+            text-align: center;
+        }
+
+        .box.type01 .box_cont_area .hashtag {
+            text-align: center;
+        }
+
+        .box.type01 .box_cont_area .hashtag a {
+            display: inline-block;
+            color: #2168f6;
+        }
+
+        .box.type01 .box_cont_area .my_hashtag {
+            margin: 15px 0;
+            text-align: center;
+
+        }
+
+        .box.type01 .box_cont_area .my_hashtag a {
+            display: inline-block;
+            line-height: 15px;
+        }
+
+        .box.type01 .box_cont_area .icon_area {
+            margin-top: 20px;
+        }
+
+        .box.type01 .box_cont_area .icon_area ul {}
+
+        .box.type01 .box_cont_area .icon_area ul li {
+            float: left;
+            width: 33.3%;
+            padding-top: 30px;
+            text-align: center;
+
+        }
+
+        .box.type01 .box_cont_area .icon_area ul li a {
+            display: block;
+            margin: 5px;
+            font-size: 13px;
+        }
+    
+
+
+
+        .box.type01 .box_cont_area .icon_area ul li.icon.like_icon {
+            background: url('../img/common/ico_like.png') no-repeat 50% 0;
+        }
+
+        .box.type01 .box_cont_area .icon_area ul li.icon.zzim_icon {
+            background: url('../img/common/ico_zzim.png') no-repeat 50% 0;
+        }
+
+        .box.type01 .box_cont_area .icon_area ul li.icon.review_icon {
+            background: url('../img/common/ico_review.png') no-repeat 50% 0;
+        }
+
+        .box.type01 .box_cont_area .icon_area ul li span {
+            margin:4px 0;
+            display:block;
+            color: #959595;
+            font-size: 12px;
+            
+        }
+
+
+
+        /* 게시판 타입2 */
+
+        .box.type02 {
+            float: none;
+            margin-bottom: 2%;
+            border-left:none;border-right:none;
+        }
+
+        .box.type02::after {}
+
+        .box.type02 .img_area {
+            float: left;
+            width: 30%;
+        }
+
+        .box.type02 .box_cont_area {
+            float: left;
+            position: relative;
+            width: 70%;
+            padding: 2%;
+        }
+
+        .box.type02 .box_cont_area h4 {
+            text-align: left
+        }
+
+        .box.type02 .box_cont_area .location_category {
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .box.type02 .box_cont_area .info_txt {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #959595;
+            line-height: 22px;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+        }
+
+        .box.type02 .box_cont_area .count_area {
+            color: #959595;
+            font-size: 13px;
+        }
+
+        .box.type02 .box_cont_area .count_area li {
+            display: inline-block;
+            position: relative;
+            padding: 0 10px;
+            
+        }
+
+        .box.type02 .box_cont_area .count_area li:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 1px;
+            height: 10px;
+            background: #999;
+        }
+
+        .box.type02 .box_cont_area .count_area li:first-child {
+            padding-left: 0;
+        }
+
+        .box.type02 .box_cont_area .count_area li:first-child:after {
+            display: none;
+        }
+
+        .box.type02 .box_cont_area .icon_area {
+            position: absolute;
+            right: 0;
+            top: 18px;
+
+
+        }
+
+        .box.type02 .box_cont_area .icon_area li {
+            margin:5px 0;
+            border: 1px solid #e5e5e5;
+            
+        }
+
+        .box.type02 .box_cont_area .icon_area ul li a {
+            display: block;
+            padding:15px 60px;
+        }
+
+        .box.type02 .box_cont_area .icon_area ul li.icon.like_icon {
+            background: url('../img/common/ico_like.png') no-repeat 20px 50%;
+        }
+
+        .box.type02 .box_cont_area .icon_area ul li.icon.zzim_icon {
+            background: url('../img/common/ico_zzim.png') no-repeat  20px 50%;
+        }
+
+        .box.type02 .box_cont_area .icon_area ul li.icon.review_icon {
+            background: url('../img/common/ico_review.png') no-repeat  20px 50%;
+        }
+
+

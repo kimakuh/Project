@@ -2,330 +2,47 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>음식점</title>
+    <title>탐라는제주 - 숨어 있던 진짜 hot한 제주</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta property="og:title" content="탐라는제주">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="탐라는제주 - 숨어 있던 진짜 hot한 제주">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!-- css -->
     <link rel="stylesheet" href="../../css/common.css" />
     <link rel="stylesheet" href="../../css/layout.css" />
+    <!-- sub02 -->
+    <link rel="stylesheet" href="../../css/sub02.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../js/common/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common/jquery-ui.min.js"></script>
+
     <style type="text/css">
-        /* font */
-
         @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
-
-        body {
-            /* font-family: 'Noto Sans KR', sans-serif; */
-            font-family: 'NanumSquareRound', sans-serif;
-            font-size: 14px;
-        }
-
-        /* common */
-
-        .container {
-            margin: 0 auto;
-            width: 1200px;
-        }
-
-        .clear {
-            clear: both;
-        }
-
-        .clear::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .no_mar {
-            margin: 0;
-        }
-
-        /* layout */
-
-        .container h3 {
-            margin: 20px 0;
-            font-size: 30px;
-        }
-
-        /* board_common */
-
-        .box_wrap {
-            margin: 0 0 2% -2%;
-        }
-
-        .box_warp::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .box {
-            float: left;
-            border: 1px solid #ededed;
-            box-sizing: border-box;
-
-        }
-
-        .box .img_area {
-            position: relative;
-        }
-
-
-        .box::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-
-        .box .img_area .category {
-            position: absolute;
-            left: 0;
-            top: 0;
-            padding: 5px 10px;
-            background: #222;
-            color: #fff;
-        }
-
-        .box .img_area img {
-            display: block;
-            width: 100%;
-            height: 225px;
-        }
-
-        .box .box_cont_area h4 {
-            font-size: 22px;
-            font-weight: bold;
-
-            overflow: hidden;
-            color: #1b1b1b;
-            line-height: 22px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .box .box_cont_area .location_category {
-            padding: 15px;
-
-            color: #959595;
-            line-height: 16px;
-        }
-
-        .box .box_cont_area .hashtag a {
-            display: inline-block;
-            color: #2168f6;
-        }
-
-
-        /* board_type01 */
-
-        .box.type01 {
-
-            width: 32%;
-            margin-left: 2%;
-        }
-
-        .box.type01.no_mar {
-            margin: 0;
-        }
-
-        .box.type01 .img_area {}
-
-        .box.type01 .img_area .category {}
-
-        .box.type01 .img_area img {}
-
-        .box.type01 .box_cont_area {
-            padding: 25px 10px;
-        }
-
-        .box.type01 .box_cont_area h4 {
-            text-align: center;
-        }
-
-        .box.type01 .box_cont_area .location_category {
-            text-align: center;
-        }
-
-        .box.type01 .box_cont_area .hashtag {
-            text-align: center;
-        }
-
-        .box.type01 .box_cont_area .hashtag a {
-            display: inline-block;
-            color: #2168f6;
-        }
-
-        .box.type01 .box_cont_area .my_hashtag {
-            margin: 15px 0;
-            text-align: center;
-
-        }
-
-        .box.type01 .box_cont_area .my_hashtag a {
-            display: inline-block;
-            line-height: 15px;
-        }
-
-        .box.type01 .box_cont_area .icon_area {
-            margin-top: 20px;
-        }
-
-        .box.type01 .box_cont_area .icon_area ul {}
-
-        .box.type01 .box_cont_area .icon_area ul li {
-            float: left;
-            width: 33.3%;
-            padding-top: 30px;
-            text-align: center;
-
-        }
-
-        .box.type01 .box_cont_area .icon_area ul li a {
-            display: block;
-            margin: 5px;
-            font-size: 13px;
-        }
-    
-
-
-
-        .box.type01 .box_cont_area .icon_area ul li.icon.like_icon {
-            background: url('../../img/common/ico_like.png') no-repeat 50% 0;
-        }
-
-        .box.type01 .box_cont_area .icon_area ul li.icon.zzim_icon {
-            background: url('../../img/common/ico_zzim.png') no-repeat 50% 0;
-        }
-
-        .box.type01 .box_cont_area .icon_area ul li.icon.review_icon {
-            background: url('../../img/common/ico_review.png') no-repeat 50% 0;
-        }
-
-        .box.type01 .box_cont_area .icon_area ul li span {
-            margin:4px 0;
-            display:block;
-            color: #959595;
-            font-size: 12px;
-            
-        }
-
-
-
-        /* 게시판 타입2 */
-
-        .box.type02 {
-            float: none;
-            margin-bottom: 2%;
-            border-left:none;border-right:none;
-        }
-
-        .box.type02::after {}
-
-        .box.type02 .img_area {
-            float: left;
-            width: 30%;
-        }
-
-        .box.type02 .box_cont_area {
-            float: left;
-            position: relative;
-            width: 66%;
-            padding: 2%;
-        }
-
-        .box.type02 .box_cont_area h4 {
-            text-align: left
-        }
-
-        .box.type02 .box_cont_area .location_category {
-            padding-left: 0;
-            text-align: left;
-        }
-
-        .box.type02 .box_cont_area .info_txt {
-            margin: 10px 0;
-            font-size: 14px;
-            color: #959595;
-            line-height: 22px;
-            text-overflow: ellipsis;
-            -webkit-box-orient: vertical;
-        }
-
-        .box.type02 .box_cont_area .count_area {
-            color: #959595;
-            font-size: 13px;
-        }
-
-        .box.type02 .box_cont_area .count_area li {
-            display: inline-block;
-            position: relative;
-            padding: 0 10px;
-            
-        }
-
-        .box.type02 .box_cont_area .count_area li:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            width: 1px;
-            height: 10px;
-            background: #999;
-        }
-
-        .box.type02 .box_cont_area .count_area li:first-child {
-            padding-left: 0;
-        }
-
-        .box.type02 .box_cont_area .count_area li:first-child:after {
-            display: none;
-        }
-
-        .box.type02 .box_cont_area .icon_area {
-            position: absolute;
-            right: 0;
-            top: 50px;
-
-            /*
-            
-            float:right;
-            margin-top:-115px;
-            
-            */
-
-        }
-
-        .box.type02 .box_cont_area .icon_area li {
-            margin:5px 0;
-            border: 1px solid #e5e5e5;
-            
-        }
-
-        .box.type02 .box_cont_area .icon_area ul li a {
-            display: block;
-            padding:15px 60px;
-        }
-
-        .box.type02 .box_cont_area .icon_area ul li.icon.like_icon {
-            background: url('../../img/common/ico_like.png') no-repeat 20px 50%;
-        }
-
-        .box.type02 .box_cont_area .icon_area ul li.icon.zzim_icon {
-            background: url('../../img/common/ico_zzim.png') no-repeat  20px 50%;
-        }
-
-        .box.type02 .box_cont_area .icon_area ul li.icon.review_icon {
-            background: url('../../img/common/ico_review.png') no-repeat  20px 50%;
-        }
     </style>
+
 </head>
 
-
 <body>
+
+
+    <div id="header"></div>
+
     <div class="container" id="sub02">
-        <h3>게시판타입1</h3>
+        <div class="svisual"></div>
+
+
+        <div class="sub_text_area">
+            <h3>제주의 전통음식부터 다양한 음식의 천국 제주도</h3>
+            <p class="h3_sub_txt">여행의 즐거움 중 빼놓을 수 없는 것은 단연 음식이다. 제주도는 흑돼지, 말요리 그리고 해산물 등 다양한 음식문화를 접할 수 있다. 제주도의 전통 음식부터 줄을 서서 기다리는 최고 인기의 음식까지
+                모두 즐겨보자.</p>
+        </div>
         <div class="board_restaurant tpye01">
             <div class="board_wrap">
                 <div class="box_wrap clear">
@@ -393,28 +110,28 @@
                                 <a href="#"></a>
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- icon_area end -->
                         </div>
                         <!-- box_cont_area -->
@@ -440,28 +157,28 @@
                                 <a href="#">#우유식빵</a>
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- icon_area end -->
                         </div>
                         <!-- box_cont_area -->
@@ -494,28 +211,28 @@
                                 <a href="#"></a>
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <!-- box_cont_area -->
                     </div>
@@ -539,28 +256,28 @@
                                 <a href="#"></a>
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- icon_area end -->
                         </div>
                         <!-- box_cont_area -->
@@ -586,28 +303,28 @@
                                 <a href="#">#우유식빵</a>
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- icon_area end -->
                         </div>
                         <!-- box_cont_area -->
@@ -646,28 +363,28 @@
                                 전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
                             </p>
                             <div class="icon_area">
-                                    <ul class="clear">
-                                        <li class="icon like_icon">
-                                            <a href="#">
-                                                <span>좋아요</span>
-                                                <span class="like_count">60</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon zzim_icon">
-                                            <a href="#">
-                                                <span>찜하기</span>
-                                                <span class="zzim_count">883</span>
-                                            </a>
-                                        </li>
-                                        <li class="icon review_icon">
-                                            <a href="#">
-                                                <span>리뷰</span>
-                                                <span class="review_count">921</span>
-                                            </a>
-    
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- icon_area -->
                             <div class="count_area">
                                 <ul>
@@ -703,48 +420,48 @@
                                 <a href="#">경관/포토</a>
                             </p>
                             <p class="info_txt">
-                                    전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
-                                </p>
-                                <div class="icon_area">
-                                        <ul class="clear">
-                                            <li class="icon like_icon">
-                                                <a href="#">
-                                                    <span>좋아요</span>
-                                                    <span class="like_count">60</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon zzim_icon">
-                                                <a href="#">
-                                                    <span>찜하기</span>
-                                                    <span class="zzim_count">883</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon review_icon">
-                                                <a href="#">
-                                                    <span>리뷰</span>
-                                                    <span class="review_count">921</span>
-                                                </a>
-        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <!-- icon_area -->
-                                <div class="count_area">
-                                    <ul>
-                                        <li>조회
-                                            <span>19,408</span>
-                                        </li>
-                                        <li>방문
-                                            <span>57</span>
-                                        </li>
-                                        <li>사진 공유
-                                            <span>59</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- count_area-->
+                                전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
+                            </p>
+                            <div class="icon_area">
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- box_cont_area -->
+                            <!-- icon_area -->
+                            <div class="count_area">
+                                <ul>
+                                    <li>조회
+                                        <span>19,408</span>
+                                    </li>
+                                    <li>방문
+                                        <span>57</span>
+                                    </li>
+                                    <li>사진 공유
+                                        <span>59</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- count_area-->
+                        </div>
+                        <!-- box_cont_area -->
                     </div>
                     <!-- box end -->
                     <div class="box type02">
@@ -763,48 +480,48 @@
                                 <a href="#">경관/포토</a>
                             </p>
                             <p class="info_txt">
-                                    전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
-                                </p>
-                                <div class="icon_area">
-                                        <ul class="clear">
-                                            <li class="icon like_icon">
-                                                <a href="#">
-                                                    <span>좋아요</span>
-                                                    <span class="like_count">60</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon zzim_icon">
-                                                <a href="#">
-                                                    <span>찜하기</span>
-                                                    <span class="zzim_count">883</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon review_icon">
-                                                <a href="#">
-                                                    <span>리뷰</span>
-                                                    <span class="review_count">921</span>
-                                                </a>
-        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <!-- icon_area -->
-                                <div class="count_area">
-                                    <ul>
-                                        <li>조회
-                                            <span>19,408</span>
-                                        </li>
-                                        <li>방문
-                                            <span>57</span>
-                                        </li>
-                                        <li>사진 공유
-                                            <span>59</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- count_area-->
+                                전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
+                            </p>
+                            <div class="icon_area">
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- box_cont_area -->
+                            <!-- icon_area -->
+                            <div class="count_area">
+                                <ul>
+                                    <li>조회
+                                        <span>19,408</span>
+                                    </li>
+                                    <li>방문
+                                        <span>57</span>
+                                    </li>
+                                    <li>사진 공유
+                                        <span>59</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- count_area-->
+                        </div>
+                        <!-- box_cont_area -->
                     </div>
                     <!-- box end -->
                 </div>
@@ -831,48 +548,48 @@
                                 <a href="#">#미역국</a>
                             </p>
                             <p class="info_txt">
-                                    전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
-                                </p>
-                                <div class="icon_area">
-                                        <ul class="clear">
-                                            <li class="icon like_icon">
-                                                <a href="#">
-                                                    <span>좋아요</span>
-                                                    <span class="like_count">60</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon zzim_icon">
-                                                <a href="#">
-                                                    <span>찜하기</span>
-                                                    <span class="zzim_count">883</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon review_icon">
-                                                <a href="#">
-                                                    <span>리뷰</span>
-                                                    <span class="review_count">921</span>
-                                                </a>
-        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <!-- icon_area -->
-                                <div class="count_area">
-                                    <ul>
-                                        <li>조회
-                                            <span>19,408</span>
-                                        </li>
-                                        <li>방문
-                                            <span>57</span>
-                                        </li>
-                                        <li>사진 공유
-                                            <span>59</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- count_area-->
+                                전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
+                            </p>
+                            <div class="icon_area">
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- box_cont_area -->
+                            <!-- icon_area -->
+                            <div class="count_area">
+                                <ul>
+                                    <li>조회
+                                        <span>19,408</span>
+                                    </li>
+                                    <li>방문
+                                        <span>57</span>
+                                    </li>
+                                    <li>사진 공유
+                                        <span>59</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- count_area-->
+                        </div>
+                        <!-- box_cont_area -->
                     </div>
                     <!-- box end -->
                     <div class="box type02">
@@ -891,48 +608,48 @@
                                 <a href="#">경관/포토</a>
                             </p>
                             <p class="info_txt">
-                                    전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
-                                </p>
-                                <div class="icon_area">
-                                        <ul class="clear">
-                                            <li class="icon like_icon">
-                                                <a href="#">
-                                                    <span>좋아요</span>
-                                                    <span class="like_count">60</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon zzim_icon">
-                                                <a href="#">
-                                                    <span>찜하기</span>
-                                                    <span class="zzim_count">883</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon review_icon">
-                                                <a href="#">
-                                                    <span>리뷰</span>
-                                                    <span class="review_count">921</span>
-                                                </a>
-        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <!-- icon_area -->
-                                <div class="count_area">
-                                    <ul>
-                                        <li>조회
-                                            <span>19,408</span>
-                                        </li>
-                                        <li>방문
-                                            <span>57</span>
-                                        </li>
-                                        <li>사진 공유
-                                            <span>59</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- count_area-->
+                                전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
+                            </p>
+                            <div class="icon_area">
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- box_cont_area -->
+                            <!-- icon_area -->
+                            <div class="count_area">
+                                <ul>
+                                    <li>조회
+                                        <span>19,408</span>
+                                    </li>
+                                    <li>방문
+                                        <span>57</span>
+                                    </li>
+                                    <li>사진 공유
+                                        <span>59</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- count_area-->
+                        </div>
+                        <!-- box_cont_area -->
                     </div>
                     <!-- box end -->
                     <div class="box type02">
@@ -951,48 +668,48 @@
                                 <a href="#">경관/포토</a>
                             </p>
                             <p class="info_txt">
-                                    전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
-                                </p>
-                                <div class="icon_area">
-                                        <ul class="clear">
-                                            <li class="icon like_icon">
-                                                <a href="#">
-                                                    <span>좋아요</span>
-                                                    <span class="like_count">60</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon zzim_icon">
-                                                <a href="#">
-                                                    <span>찜하기</span>
-                                                    <span class="zzim_count">883</span>
-                                                </a>
-                                            </li>
-                                            <li class="icon review_icon">
-                                                <a href="#">
-                                                    <span>리뷰</span>
-                                                    <span class="review_count">921</span>
-                                                </a>
-        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <!-- icon_area -->
-                                <div class="count_area">
-                                    <ul>
-                                        <li>조회
-                                            <span>19,408</span>
-                                        </li>
-                                        <li>방문
-                                            <span>57</span>
-                                        </li>
-                                        <li>사진 공유
-                                            <span>59</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- count_area-->
+                                전복내장으로 만든 김밥, 심플한 메뉴로 많은 여행객들에게 사랑받는 곳
+                            </p>
+                            <div class="icon_area">
+                                <ul class="clear">
+                                    <li class="icon like_icon">
+                                        <a href="#">
+                                            <span>좋아요</span>
+                                            <span class="like_count">60</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon zzim_icon">
+                                        <a href="#">
+                                            <span>찜하기</span>
+                                            <span class="zzim_count">883</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon review_icon">
+                                        <a href="#">
+                                            <span>리뷰</span>
+                                            <span class="review_count">921</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- box_cont_area -->
+                            <!-- icon_area -->
+                            <div class="count_area">
+                                <ul>
+                                    <li>조회
+                                        <span>19,408</span>
+                                    </li>
+                                    <li>방문
+                                        <span>57</span>
+                                    </li>
+                                    <li>사진 공유
+                                        <span>59</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- count_area-->
+                        </div>
+                        <!-- box_cont_area -->
                     </div>
                     <!-- box end -->
                 </div>
@@ -1003,34 +720,16 @@
         <!-- board_restaurant -->
     </div>
     <!-- container-->
-    <footer id="footer">
-        <div class="wrapper">
-            <div class="foot_link">
-                <ul>
-                    <li>
-                        <a href="#">개인정보취급방침</a>
-                    </li>
-                    <li>
-                        <a href="#">이용약관</a>
-                    </li>
-                    <li>
-                        <a href="#">홈페이지 개선의견</a>
-                    </li>
-                    <li>
-                        <a href="#">관광업체등록문의</a>
-                    </li>
-                    <li>
-                        <a href="#">사이트맵</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot_info">
-                <address>(63208) 제주특별자치도 제주시 광양9길 10, 대표전화：064-120, Gwangyang 9-gil, Jeju-si, Jeju. Republic of Korea 63208</address>
-                <p>Copyright 2018 TAMNANEUNTEAM. All rights reserved.</p>
-                <p>제주시 홈페이지는 운영체제(OS)：Windows 7이상, 인터넷 브라우저：IE 9이상, 파이어 폭스, 크롬, 사파리에 최적화 되어있습니다.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#header").load("../include/sub_header.html")
+            $("#footer").load("../include/sub_footer.html")
+            /* id 지정을 통해서도 가능합니다. 
+             $("#header").load("header.html #navbar")
+             */
+        });
+    </script>
 </body>
 
 </html>
